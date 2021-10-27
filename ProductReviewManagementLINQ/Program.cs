@@ -40,9 +40,7 @@ namespace ProductReviewManagementLINQ
                 new ProductReview(){ProductId=6,UserId=1,Review="bad",Rating=7,IsLike=false},
                 new ProductReview(){ProductId=7,UserId=5,Review="good",Rating=34,IsLike=true},
             };
-            IterateLoopList(list);
-            RetriveBasedonProductIdandRating(list);
-
+            CountingID(list);
             Console.ReadLine();
         }
 
@@ -78,9 +76,22 @@ namespace ProductReviewManagementLINQ
             IterateLoopList(data);
             Console.ReadLine();
         }
-
+        //UC4
+        //Counting Each ID present in the List
+        public static void CountingID(List<ProductReview> list)
+        {
+            var data = (list.GroupBy(a => a.ProductId).Select(x => new { ProductId = x.Key, count = x.Count() }));
+            Console.WriteLine("Count of Each Product Id is: ");
+            foreach (var element in data)
+            {
+                Console.WriteLine("Product ID: " + element.ProductId + "\t Count: " + element.count);
+                Console.WriteLine("========================================================");
+            }
+        }
     }
 }
+
+    
 
     
 
