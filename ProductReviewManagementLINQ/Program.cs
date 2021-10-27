@@ -41,10 +41,12 @@ namespace ProductReviewManagementLINQ
                 new ProductReview(){ProductId=7,UserId=5,Review="good",Rating=34,IsLike=true},
             };
             IterateLoopList(list);
+            RetriveBasedonProductIdandRating(list);
+
             Console.ReadLine();
         }
 
-       // UC1 Add  values in the list
+        // UC1 Add  values in the list
         public static void IterateLoopList(List<ProductReview> list)
         {
             foreach (ProductReview product in list)
@@ -58,19 +60,16 @@ namespace ProductReviewManagementLINQ
         public static void RetriveTop3Records(List<ProductReview> list)
         {
             var result = (from product in list orderby product.Rating descending select product).ToList();
-            
+            Console.WriteLine("=============================================");
             Console.WriteLine("After Sorting");
             IterateLoopList(result);
             var top3Records = result.Take(3).ToList();
-            
+            Console.WriteLine("=============================================");
             Console.WriteLine("Top 3 Records");
             IterateLoopList(top3Records);
+            Console.ReadLine();
         }
-
-      
-
-
-
+       
     }
 }
 
