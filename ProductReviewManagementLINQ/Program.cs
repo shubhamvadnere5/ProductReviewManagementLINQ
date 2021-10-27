@@ -69,7 +69,16 @@ namespace ProductReviewManagementLINQ
             IterateLoopList(top3Records);
             Console.ReadLine();
         }
-       
+        //UC3
+        //retrive the record whose Rating is Greater than 3 and Product ID is Either 1 or 4 or 9
+        public static void RetriveBasedonProductIdandRating(List<ProductReview> list)
+        {
+            var data = (list.Where(a => a.Rating > 3 && (a.ProductId == 1 || a.ProductId == 4 || a.ProductId == 9))).ToList();
+            Console.WriteLine("The desire Result is :");
+            IterateLoopList(data);
+            Console.ReadLine();
+        }
+
     }
 }
 
