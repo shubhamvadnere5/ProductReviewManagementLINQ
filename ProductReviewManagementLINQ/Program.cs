@@ -40,7 +40,8 @@ namespace ProductReviewManagementLINQ
                 new ProductReview(){ProductId=6,UserId=1,Review="bad",Rating=7,IsLike=false},
                 new ProductReview(){ProductId=7,UserId=5,Review="good",Rating=34,IsLike=true},
             };
-            ProductIdandReview(list);
+           
+            SkipTopFiveRecords(list);
             Console.ReadLine();
         }
 
@@ -99,13 +100,20 @@ namespace ProductReviewManagementLINQ
                 Console.WriteLine("=====================================");
             }
         }
+        //Uc6
+        public static void SkipTopFiveRecords(List<ProductReview> products)
+        {
+            Console.WriteLine("\n----------Skip Top Five records in list");
+            var res = (from product in products orderby product.Rating descending select product).Skip(5).ToList();
+            IterateLoopList(res);
+        }
     }
 }
+        
+    
 
 
+    
 
-
-
-
-
+    
 
