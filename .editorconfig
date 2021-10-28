@@ -2,3 +2,6 @@
 
 # IDE0055: Fix formatting
 dotnet_diagnostic.IDE0055.severity = none
+
+# IDE0100: Remove redundant equality
+dotnet_diagnostic.IDE0100.severity = none
