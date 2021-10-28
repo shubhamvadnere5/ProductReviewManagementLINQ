@@ -123,8 +123,16 @@ namespace ProductReviewManagementLINQ
                 Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["productId"], p["userId"], p["rating"], p["review"], p["isLike"]);
             }
         }
+
+        //Uc12 Retrieve details whose user id is 10 and also sort by rating
+        public static void RetrieveRecordofUserId(List<ProductReview> list)
+        {
+            var res = (from product in list orderby product.Rating where product.UserId == 10 select product).ToList();
+            IterateLoopList(res);
+        }
     }
 }
+    
 
 
 

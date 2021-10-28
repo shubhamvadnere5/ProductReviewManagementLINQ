@@ -14,21 +14,21 @@ namespace ProductReviewManagementLINQ
             List<ProductReview> list = new List<ProductReview>()
             {
                 new ProductReview(){ProductId=1,UserId=1,Review="good",Rating=17,IsLike=true},
-                new ProductReview(){ProductId=2,UserId=6,Review="good",Rating=11,IsLike=true},
+                new ProductReview(){ProductId=2,UserId=10,Review="good",Rating=11,IsLike=true},
                 new ProductReview(){ProductId=1,UserId=2,Review="bad",Rating=7,IsLike=false},
                 new ProductReview(){ProductId=12,UserId=1,Review="good",Rating=19,IsLike=true},
-                new ProductReview(){ProductId=1,UserId=2,Review="good",Rating=18,IsLike=true},
+                new ProductReview(){ProductId=1,UserId=10,Review="good",Rating=18,IsLike=true},
                 new ProductReview(){ProductId=8,UserId=3,Review="bad",Rating=10,IsLike=false},
                 new ProductReview(){ProductId=5,UserId=5,Review="good",Rating=9,IsLike=false},
                 new ProductReview(){ProductId=6,UserId=3,Review="good",Rating=7,IsLike=false},
                 new ProductReview(){ProductId=4,UserId=5,Review="bad",Rating=19,IsLike=true},
                 new ProductReview(){ProductId=3,UserId=6,Review="bad",Rating=10,IsLike=false},
                 new ProductReview(){ProductId=5,UserId=7,Review="good",Rating=15,IsLike=true},
-                new ProductReview(){ProductId=1,UserId=1,Review="good",Rating=18,IsLike=true},
+                new ProductReview(){ProductId=1,UserId=10,Review="good",Rating=18,IsLike=true},
                 new ProductReview(){ProductId=2,UserId=9,Review="nice",Rating=16,IsLike=true},
                 new ProductReview(){ProductId=9,UserId=3,Review="bad",Rating=10,IsLike=false},
                 new ProductReview(){ProductId=8,UserId=4,Review="good",Rating=13,IsLike=true},
-                new ProductReview(){ProductId=4,UserId=5,Review="bad",Rating=3,IsLike=false},
+                new ProductReview(){ProductId=4,UserId=10,Review="bad",Rating=3,IsLike=false},
                 new ProductReview(){ProductId=2,UserId=8,Review="nice",Rating=17,IsLike=true},
                 new ProductReview(){ProductId=5,UserId=4,Review="bad",Rating=9,IsLike=false},
                 new ProductReview(){ProductId=6,UserId=3,Review="good",Rating=24,IsLike=true},
@@ -39,8 +39,9 @@ namespace ProductReviewManagementLINQ
                 new ProductReview(){ProductId=6,UserId=1,Review="bad",Rating=7,IsLike=false},
                 new ProductReview(){ProductId=7,UserId=5,Review="nice",Rating=34,IsLike=true},
             };
-            DataTable dt = ManagementOperation.CreateDataTable(list);
-            ManagementOperation.RetrieveReviewNice(dt);
+            //UC12
+            Console.WriteLine("\n-------- Retrieve Record based on rating where userid=10 --------");
+            ManagementOperation.RetrieveRecordofUserId(list);
             Console.ReadLine();
         }
     }
