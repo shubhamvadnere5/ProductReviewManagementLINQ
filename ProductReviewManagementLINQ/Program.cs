@@ -70,7 +70,10 @@ namespace ProductReviewManagementLINQ
                     DataTable table = ManagementOperation.CreateDataTable(list);
                     ManagementOperation.ReturnsOnlyIsLikeFieldAsTrue(table);
                     break;
-                
+                case 10:
+                    DataTable dt = ManagementOperation.CreateDataTable(list);
+                    ManagementOperation.AverageOfRating(dt);
+                    break;
             }
             Console.ReadLine();
         }
